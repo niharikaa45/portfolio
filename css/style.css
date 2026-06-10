@@ -1,3 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+  --primary-color: #2563eb;
+  --dark: #1e293b;
+  --text: #334155;
+  --light-bg: #f8fafc;
+  --white: #ffffff;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -5,17 +15,24 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
   line-height: 1.6;
 }
-
+h1, h2, h3 {
+  color: var(--dark);
+  font-weight: 700;
+}
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
 /* Navigation Bar */
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 5%;
-  background: #333;
+  background: var(--dark);
   color: white;
   position: sticky;
   top: 0;
@@ -106,4 +123,89 @@ nav a:hover {
 
 .project-links a:hover {
     background: #0056b3;
+}
+/* Resume Section */
+#resume, #contact {
+  padding: 60px 20px;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.resume-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+.resume-card {
+  background: #f4f4f4;
+  padding: 20px;
+  border-radius: 8px;
+  width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.resume-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.btn-download {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  }
+.btn-download:hover {
+  background: #0056b3;
+}
+/* Contact Form */
+#contactForm {
+  max-width: 500px;
+  margin: 30px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+#contactForm input, #contactForm textarea {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+}
+#contactForm button {
+  padding: 12px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+#contactForm button:hover {
+  background: #0056b3;
+}
+#formMessage {
+  margin-top: 10px;
+  font-size: bold;
+}
+/* Footer */
+footer {
+  text-align: center;
+  padding: 30px 20px;
+  background: var(--dark);
+  color: white;
+  margin-top: 40px;
+}
+.social-links a {
+  color: white;
+  margin: 0 15px;
+  font-size: 18px;
+  text-decoration: none;
+}
+.social-links a:hover {
+  color: #007bff;
 }
