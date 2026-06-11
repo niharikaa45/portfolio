@@ -1,5 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-
+:root{
+  --bg: #ffffff;
+  --text: #1a1a1a;  
+}
+[data-theme="dark"] {
+  --bg: #0f172a;
+  --text: #e2e8fo;
+}
+body {
+  background: var(--bg);
+  color: var(--text);
+  padding-top: 80px;
+  transition: background 0.3s, color 0.3s;
+}
 :root {
   --primary-color: #2563eb;
   --dark: #1e293b;
@@ -12,6 +25,9 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -208,4 +224,255 @@ footer {
 }
 .social-links a:hover {
   color: #007bff;
+}
+/* Mobile Responsive Fixes */
+@media (max-width: 768px) {
+  nav  {
+    flex-direction: column;
+    padding: 15px;
+  }
+  nav h1 {
+    margin-bottom: 10px;
+  }
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    text-align: center;
+  }
+  nav ul li {
+    margin: 5px 0;
+  }
+  /*2. Fix hero section buttons */
+  #home .btn {
+    display: block;
+    width: 100%;
+    margin: 10px auto;
+    text-align: center;
+  }
+  /*3. Fix About section layout */
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+  .about-image {
+    width: 100%;
+    max-width: 300px;
+    order: -1;
+  }
+  /*4. Smaller headings on mobile */
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.8rem; }
+  /*5.Full width secions */
+  section{
+    padding: 40px 15px;
+  }
+}
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+  } 
+  nav {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+  @media (max-width: 768px) {
+    nav ul {
+      display: none;
+    } 
+    nav {
+      justify-content: center;
+    }
+    .about-container {
+      flex-direction: column;
+    }
+  }
+  .menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+  }
+  @media (max-width: 768px) {
+    .menu-toggle {
+      display: block;
+    }
+    nav ul {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      text-align: center;
+    }
+    nav ul.active {
+      display: flex;
+    }
+  }
+  @media (max-width: 768px) {
+    section {
+      padding: 30px 15px;}
+      h1 {
+        font-size: 1.8rem;
+      }
+      h2 {
+        font-size: 1.5rem;
+      }
+      p {
+        font-size: 14px; line-height: 1.6; }
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+      button,.btn, a[dowload] {
+        transition: all 0.3s ease;
+        border-radius: 6px;
+        font-weight: 600;
+      }
+      button:hover, .btn:hover, a[download]:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      }
+      @media (max-width: 768px) {
+        section {
+          padding: 40px 20px;
+        }
+        h1 {
+          font-size: 2rem;
+        }
+        h2 {
+          font-size: 1.8rem;
+          margin-bottom: 1.5rem;
+        }
+      }
+      nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      
+      @media (max-width: 768px) {
+        .theme-btn {
+          margin-right: 10px;
+          order: 2;
+        }
+        .hamburger {
+          order:3;
+        }
+      }
+      nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 5%;
+        background: var(--bg);
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      }
+      .logo {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--text);
+      }
+      .nav-links {
+        display: flex;
+        list-style: none;
+        gap: 2rem;
+        margin: 0;
+        padding: 0;
+      }
+      .nav-links a {
+       text-decoration: none;
+        color: var(--text);
+        font-weight: 500;
+      }
+      .nav-links a:hover {
+        color: #3b82f6;
+      }
+      
+      
+      .hamburger {
+        display: none;
+        font-size: 1.8rem;
+        cursor: pointer;
+      }
+      /* Mobile */
+      @media (max-width: 768px) {
+        .nav-links {
+          display: none;
+        }
+        .hamburger {
+          display: block;
+        }
+        .theme-btn {
+          margin-right: 10px;
+        }
+      }
+nav {
+    display: flex;
+    justify-content: space-between; /* This pushes name left, links center, button right */
+    align-items: center;
+    padding: 1rem 5%;
+    background: var(--bg);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-right: 2rem; /* Extra space after your name */
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem; /* Space between each link */
+    margin: 0 auto; /* This centers the links */
+    padding: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 500;
+}
+
+.theme-btn {
+    background: none; 
+    border: 2px solid var(--text); 
+    border-radius: 50%; 
+    width: 40px; 
+    height: 40px; 
+    cursor: pointer;
+    font-size: 18px;
+    color: var(--text);
+    margin-left: 2rem; /* Space before the button */
+}
+
+.hamburger { display: none; }
+html{
+  scroll-behavior: smooth;
+}
+.nav-links a.active {
+  color: #3b82f6;
+  font-weight: 700;
+}
+.nav-links a {
+  transition: color 0.3s ease;
+}
+.nav-links a:hover {
+  color: #3b82f6;
 }
